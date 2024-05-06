@@ -1883,10 +1883,18 @@ do
 		else
 			-- page button
 			button.Title.Font = Enum.Font.Gotham
-			button.Title.TextTransparency = 0.65
+			game:GetService("TweenService"):Create(
+				button.Title,
+				TweenInfo.new(0.3),
+				{TextTransparency = 0.65}
+			):Play()
 			
 			if button:FindFirstChild("Icon") then
-				button.Icon.ImageTransparency = 0.65
+				game:GetService("TweenService"):Create(
+					button.Icon,
+					TweenInfo.new(0.3),
+					{ImageTransparency = 0.65}
+				):Play()
 			end
 			
 			-- sections
@@ -2081,7 +2089,7 @@ do
 		value = value or math.floor(min + (max - min) * percent)
 		
 		slider.TextBox.Text = value
-		utility:Tween(bar.Fill, {Size = UDim2.new(percent, 0, 1, 0)}, 0.1)
+		utility:Tween(bar.Fill, {Size = UDim2.new(percent, 0, 1, 0)}, 0.3)
 		
 		if value ~= lvalue and slider.ImageTransparency == 0 then
 			utility:Pop(slider, 10)
