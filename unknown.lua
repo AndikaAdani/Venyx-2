@@ -1819,11 +1819,19 @@ do
 		
 		if toggle then
 			-- page button
-			button.Title.TextTransparency = 0
+			game:GetService("TweenService"):Create(
+				button.Title,
+				TweenInfo.new(0.2),
+				{TextTransparency = 0}
+			):Play()
 			button.Title.Font = Enum.Font.GothamSemibold
 			
 			if button:FindFirstChild("Icon") then
-				button.Icon.ImageTransparency = 0
+				game:GetService("TweenService"):Create(
+					button.Icon,
+					TweenInfo.new(0.2),
+					{ImageTransparency = 0.0}
+				):Play()
 			end
 			
 			-- update selected page
@@ -1885,14 +1893,14 @@ do
 			button.Title.Font = Enum.Font.Gotham
 			game:GetService("TweenService"):Create(
 				button.Title,
-				TweenInfo.new(0.3),
+				TweenInfo.new(0.2),
 				{TextTransparency = 0.65}
 			):Play()
 			
 			if button:FindFirstChild("Icon") then
 				game:GetService("TweenService"):Create(
 					button.Icon,
-					TweenInfo.new(0.3),
+					TweenInfo.new(0.2),
 					{ImageTransparency = 0.65}
 				):Play()
 			end
